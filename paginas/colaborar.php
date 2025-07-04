@@ -12,7 +12,11 @@
     <?php
         include '../navegacion.html';
     ?>
-    <form action="colaborar.php" method="post" class="card p-4 shadow-sm mb-5" style="width: 40%; margin: auto;">
+    <form action="../DB/insertar.php" 
+    method="post" class="card p-4 shadow-sm mb-5" 
+    style="width: 40%; margin: auto;"
+    enctype="multipart/form-data"
+    >
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre:</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -20,6 +24,10 @@
         <div class="mb-3">
             <label for="mail" class="form-label">Correo electrónico:</label>
             <input type="email" class="form-control" id="mail" name="mail" required>
+        </div>
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" required>
         </div>
         <select class="form-select mb-3" id="colaboracion" name="colaboracion" required>
             <option value="" disabled selected>Elije la sección donde te gustaría colaborar</option>
@@ -35,17 +43,21 @@
             <label for="mensaje" class="form-label">Mensaje:</label>
             <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
         </div>
+        <div class="mb-3">
+            <label for="imagen" class="form-label">Subir una imagen (opcional):</label>
+            <input type="file" class="form-control" id="imagen" name="imagen" multiple>
+        </div>
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="aceptar" name="aceptar" required>
+            <label class="form-check-label" for="aceptar">
+                Acepto los términos y condiciones
+            </label>
+        </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
-    <?php
-        $usuario = $_POST['nombre'];
-        $remitente = $_POST['mail'];
-        $colaboracion = $_POST['colaboracion'];
-        $mensaje = $_POST['mensaje'];
-    
+<?php
     include '../footer.html';       
 ?>
-        
     
 </body>
 </html>
