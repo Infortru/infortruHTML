@@ -16,26 +16,25 @@
         $consulta="SELECT * FROM noticias";
 
         if($resultado=mysqli_query($link, $consulta)){
-
+            echo "<h1 class='text-center my-4'>Noticias</h1>";
+            echo "<div class='d-flex flex-wrap justify-content-center'>";
             while($registros=mysqli_fetch_assoc($resultado)){
-                echo "<div class='card mt-5 rounded-2 shadow-sm' style='width: 60%; margin: auto;'>";
+                echo "<div class='card w-35 shadow-sm rounded-3'>";
                 echo "<div class='card-body'>";
-                echo "<h2 class='card-title'>" . $registros["titulo"] . "</h2>";
+                echo "<h2 class='card-title text-center'>" . $registros["titulo"] . "</h2>";
+                if($registros["imagen"] != ""){
+                    echo "<img src='../DB/imagen/" . $registros["imagen"] . "' class='card-img-top' alt='Imagen de la noticia' width='350px' height='300px'>";
+                } else {
+                    echo "<img src='../imagenes/LogotipoInforTru.jpg' class='card-img-top' alt='Imagen por defecto' width='350px' height='300px'>";
+                }
                 echo "<p class='card-text'>" . $registros["mensaje"] . "</p>";
                 echo "<p class='card-text'><small class='text-muted'>Publicado el " . $registros["fecha"] . "</small></p>";
                 echo "</div>";
-
-                if($registros["imagen"]!=""){
-
-                    echo "<img src='../DB/imagen/" . $registros["imagen"] . "'width= 350px' 'height=300px' />";
-                }
-
-                echo "<hr>";
                 echo "</div>";
-
-            }
+            }   
         }
-
+        echo "</div>";
+        
         include '../footer.html';
         ?>
     </body>
