@@ -6,13 +6,19 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
         rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
         crossorigin="anonymous">
-        <title>Contacto</title>
+        <title>Recetas</title>
     </head>
     <body>
         <?php
         include '../navegacion.html';
         
-        echo "Sección de recetas";
+        require_once '../DB/conexion.php';
+
+        echo "<h1 class='text-center my-4'>Recetas</h1>";
+
+        $consulta="SELECT * FROM recetas";
+
+        include '../DB/consultar.php';
 
         include '../footer.html';
         ?>

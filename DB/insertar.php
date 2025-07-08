@@ -1,5 +1,5 @@
 <?php
-
+header('Location: https://infortru.com/paginas/colaborar.php');
     require_once 'conexion.php';
 
      if($_FILES["imagen"]["error"]){
@@ -47,18 +47,16 @@
     $mensaje = $_POST['mensaje'];
     $imagen = $_FILES['imagen']['name'];
     $fecha = date("d-m-Y H:i:s");
+    $publicar=0;
 
     // Preparar la consulta SQL para insertar los datos
-    $sql = "INSERT INTO $colaboracion (nombre, email, titulo, fecha, mensaje, imagen) VALUES ('$usuario', '$remitente', '$titulo', '$fecha', '$mensaje', '$imagen')";
+    $sql = "INSERT INTO $colaboracion (nombre, email, titulo, fecha, mensaje, imagen, publicar) VALUES ('$usuario', '$remitente', '$titulo', '$fecha', '$mensaje', '$imagen', '$publicar')";
     exec($sql);
+    // Verificar si la consulta se ejecutó correctamente
     if (mysqli_query($link, $sql)) {
-        echo "Datos guardados correctamente." . "<br>";
-        echo $usuario . "<br>";
-        echo $remitente . "<br>";
-        echo $colaboracion . "<br>";
-        echo $mensaje . "<br>";
-        echo $imagen . "<br>";
+        echo "Datos insertados correctamente.";
     } else {
-        echo "Error al guardar los datos: " . mysqli_error($conexion);
+        echo "Error al insertar los datos: " . mysqli_error($link);
     }
-    header('Location: ../paginas/colaborar.php');
+   
+    
