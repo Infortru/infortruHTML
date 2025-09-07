@@ -16,14 +16,14 @@
         <h1 class="text-center mt-5">Editar Trucos</h1>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <img src="../../imagenes/LogotipoInforTru.jpg" class="navbar-brand" >
+                <img src="../../../imagenes/LogotipoInforTru.jpg" class="navbar-brand" >
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../administracion/administrar.php">Administrar posts</a>
+                            <a class="nav-link" href="../administrar/administrarTrucos.php">Administrar Trucos</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
             echo "<div class='form-group'>";
             echo "<label for='imagen'>Imagen:</label>";
             if (!empty($fila['imagen'])) {
-                echo "<img src='../imagen/" . htmlspecialchars($fila['imagen']) . "' alt='Imagen actual' style='width: 100px; height: auto;'><br>";
+                echo "<img src='../../imagen/" . htmlspecialchars($fila['imagen']) . "' alt='Imagen actual' style='width: 100px; height: auto;'><br>";
                 echo "Imagen actual: " . htmlspecialchars($fila['imagen']) . "<br>";
             }
             echo "<input type='file' class='form-control-file' name='imagen'>";

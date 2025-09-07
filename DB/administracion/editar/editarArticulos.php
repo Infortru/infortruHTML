@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../administracion/administrar.php">Administrar Posts</a>
+                            <a class="nav-link" href="../administrar/administrarArticulos.php">Administrar Artículos</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
             echo "<div class='form-group'>";
             echo "<label for='imagen'>Imagen:</label>";
             if (!empty($fila['imagen'])) {
-                echo "<img src='../imagen/" . htmlspecialchars($fila['imagen']) . "' alt='Imagen actual' style='width: 100px; height: auto;'><br>";
+                echo "<img src='../../imagen/" . htmlspecialchars($fila['imagen']) . "' alt='Imagen actual' style='width: 100px; height: auto;'><br>";
                 echo "Imagen actual: " . htmlspecialchars($fila['imagen']) . "<br>";
             }
             echo "<input type='file' class='form-control-file' name='imagen'>";

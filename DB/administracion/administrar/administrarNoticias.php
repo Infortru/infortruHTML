@@ -24,7 +24,7 @@
     if ($resultado) {
         echo "<table class='table table-striped'>";
         echo "<thead>
-                <tr><th>ID</th><th>Título</th><th>Mensaje</th><th>Fecha</th><th>Imagen</th><th>Publicada</th><th>Acciones</th></tr>
+                <tr><th>ID</th><th>Título</th><th>Mensaje</th><th>Fecha</th><th>Email</th><th>Imagen</th><th>Publicada</th><th>Acciones</th></tr>
             </thead>";
         echo "<tbody>";
 
@@ -34,6 +34,7 @@
             echo "<td>" . $fila['titulo'] . "</td>";
             echo "<td>" . $fila['mensaje'] . "</td>";
             echo "<td>" . $fila['fecha'] . "</td>";
+            echo "<td>" . $fila['email'] . "</td>";
             echo "<td>";
             if (!empty($fila['imagen'])) {
                 echo "<img src='../../imagen/" . $fila['imagen'] . "' alt='Imagen' style='width: 100px; height: auto;'>";
